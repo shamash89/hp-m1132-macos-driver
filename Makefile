@@ -3,7 +3,7 @@
 #   make            universal filter in build/
 #   make tools      stand-alone foo2xqx + xqxdecode (offline testing only)
 #   make check      encode the test page and decode it again
-#   make pkg        build/HP-M1132-Driver-$(VERSION).pkg (see scripts/make-pkg.sh)
+#   make pkg        build/M1132-foo2xqx-Driver-$(VERSION).pkg (see scripts/make-pkg.sh)
 #   make clean
 
 VERSION  = 1.0.0

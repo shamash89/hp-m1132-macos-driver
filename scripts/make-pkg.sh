@@ -16,7 +16,7 @@ VERSION=${VERSION:-1.0.0}
 ID=io.github.hp-m1132-macos-driver
 B=build
 ROOT=$B/pkgroot
-OUT=$B/HP-M1132-Driver-$VERSION.pkg
+OUT=$B/M1132-foo2xqx-Driver-$VERSION.pkg
 PPD=HP-LaserJet_Pro_M1132_MFP-foo2xqx.ppd
 
 [ -x $B/rastertoxqx ] || { echo "run 'make' first"; exit 1; }
@@ -45,7 +45,7 @@ pkgbuild --root "$ROOT" --identifier $ID --version "$VERSION" \
 cat > $B/distribution.xml <<EOF
 <?xml version="1.0" encoding="utf-8"?>
 <installer-gui-script minSpecVersion="2">
-    <title>HP LaserJet Pro M1132 MFP Driver</title>
+    <title>Open-source driver for HP LaserJet Pro M1132 MFP</title>
     <license file="LICENSE"/>
     <welcome file="welcome.txt"/>
     <options customize="never" require-scripts="false" hostArchitectures="arm64,x86_64"/>
