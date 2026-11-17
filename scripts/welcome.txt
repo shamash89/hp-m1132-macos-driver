@@ -1,0 +1,19 @@
+This installs an open-source printer driver for the HP LaserJet Pro M1132 MFP (USB).
+
+It adds two things to /Library/Printers:
+  - a CUPS filter (foo2xqx/rastertoxqx)
+  - a printer description file (PPD)
+
+It does not change any system or security settings.
+
+After installing:
+  1. Connect the printer by USB and switch it on.
+  2. Open System Settings > Printers & Scanners > Add Printer.
+  3. Select the HP LaserJet Professional M1132 MFP. If the driver is not chosen
+     automatically, pick "HP LaserJet Pro M1132 MFP (foo2xqx, rastertoxqx)"
+     under "Select Software".
+
+Printing only: black and white, single-sided. Scanning is not included.
+
+This driver is not made or supported by HP. It is provided under the GNU GPL
+version 2 with no warranty.

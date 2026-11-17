@@ -1,0 +1,109 @@
+%!PS-Adobe-3.0
+%%Title: M1132 100%-scale ruler test page
+%%Pages: 1
+%%EndComments
+% Works on Letter or A4: everything is positioned from the lower-left corner
+% and fits inside 190 x 260 mm.
+%%Page: 1 1
+/mm { 72 mul 25.4 div } def
+/in { 72 mul } def
+/F  { /Helvetica findfont exch scalefont setfont } def
+/num { 10 string cvs } def
+0 setgray
+
+% ---- title
+10 F
+20 mm 262 mm moveto (HP LaserJet Pro M1132 MFP - scale test. Print at 100% / "Actual size", no "Scale to fit".) show
+8 F
+20 mm 257 mm moveto (Measure with a real ruler: the mm ruler, the inch ruler and the 100 mm square must all match.) show
+
+% ---- horizontal mm ruler, 0..170 mm, baseline at y = 240 mm
+gsave
+20 mm 240 mm translate
+0.2 setlinewidth
+0 0 moveto 170 mm 0 lineto stroke
+0 1 170 {
+  /i exch def
+  i mm 0 moveto
+  i 10 mod 0 eq { 0 6 mm rlineto } { i 5 mod 0 eq { 0 4 mm rlineto } { 0 2.5 mm rlineto } ifelse } ifelse
+  stroke
+  i 10 mod 0 eq { 7 F i mm 0.6 mm add 6.5 mm moveto i num show } if
+} for
+7 F 172 mm 0 moveto (mm) show
+grestore
+
+% ---- horizontal inch ruler, 0..6.5 in, baseline at y = 225 mm
+gsave
+20 mm 225 mm translate
+0.2 setlinewidth
+0 0 moveto 6.5 in 0 lineto stroke
+0 1 104 {
+  /i exch def
+  i 16 div in 0 moveto
+  i 16 mod 0 eq { 0 6 mm rlineto } { i 8 mod 0 eq { 0 4.5 mm rlineto } { i 4 mod 0 eq { 0 3.5 mm rlineto } { i 2 mod 0 eq { 0 2.5 mm rlineto } { 0 1.5 mm rlineto } ifelse } ifelse } ifelse } ifelse
+  stroke
+  i 16 mod 0 eq { 7 F i 16 div in 0.6 mm add 6.5 mm moveto i 16 idiv num show } if
+} for
+7 F 6.5 in 2 mm add 0 moveto (inch) show
+grestore
+
+% ---- vertical mm ruler, 0..200 mm, baseline at x = 20 mm, from y = 15 mm
+gsave
+20 mm 15 mm translate
+0.2 setlinewidth
+0 0 moveto 0 200 mm lineto stroke
+0 1 200 {
+  /i exch def
+  0 i mm moveto
+  i 10 mod 0 eq { 6 mm 0 rlineto } { i 5 mod 0 eq { 4 mm 0 rlineto } { 2.5 mm 0 rlineto } ifelse } ifelse
+  stroke
+  i 10 mod 0 eq { 7 F 6.5 mm i mm 0.6 mm add moveto i num show } if
+} for
+grestore
+
+% ---- 100 mm reference square, lower-left at (50 mm, 100 mm)
+gsave
+0.3 setlinewidth
+50 mm 100 mm 100 mm 100 mm rectstroke
+% centre cross
+100 mm 145 mm moveto 100 mm 155 mm lineto stroke
+95 mm 150 mm moveto 105 mm 150 mm lineto stroke
+9 F
+62 mm 190 mm moveto (This square is exactly 100 mm x 100 mm) show
+62 mm 185 mm moveto ((3.937 in). Measure both sides.) show
+grestore
+
+% ---- 4 inch line
+gsave
+0.3 setlinewidth
+50 mm 85 mm moveto 4 in 0 rlineto stroke
+50 mm 83 mm moveto 0 4 mm rlineto stroke
+50 mm 4 in add 83 mm moveto 0 4 mm rlineto stroke
+8 F 50 mm 78 mm moveto (This line is exactly 4 inches (101.6 mm) between the end ticks.) show
+grestore
+
+% ---- print-quality patches: grey steps and fine lines
+gsave
+50 mm 50 mm translate
+0 1 9 {
+  /i exch def
+  1 i 9 div sub setgray
+  i 10 mm mul 0 10 mm 12 mm rectfill
+} for
+0 setgray 0.2 setlinewidth
+0 0 100 mm 12 mm rectstroke
+7 F 0 -4 mm moveto (Grey steps 0% to 100%) show
+grestore
+
+gsave
+50 mm 25 mm translate
+0 1 40 {
+  /i exch def
+  i 40 div 0.5 mul 0.05 add setlinewidth
+  i 2.5 mm mul 0 moveto 0 12 mm rlineto stroke
+} for
+7 F 0 -4 mm moveto (Hairlines 0.05 pt to 0.55 pt) show
+grestore
+
+showpage
+%%EOF
