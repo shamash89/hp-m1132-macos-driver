@@ -28,8 +28,10 @@ them.
    printer. If the driver is not chosen automatically, pick
    **HP LaserJet Pro M1132 MFP (foo2xqx, rastertoxqx)** under "Select Software".
 
-If the package is unsigned, macOS will refuse to open it on the first try. Go
-to **System Settings > Privacy & Security** and click **Open Anyway**.
+Release packages are signed with a Developer ID and notarised by Apple, so they
+open with a normal double-click. A package you build yourself without signing
+will be blocked on the first try; go to **System Settings > Privacy & Security**
+and click **Open Anyway**.
 
 Or from Terminal, with the printer connected:
 
